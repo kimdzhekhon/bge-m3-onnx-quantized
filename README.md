@@ -3,7 +3,7 @@
 [![HuggingFace](https://img.shields.io/badge/HuggingFace-Model-yellow)](https://huggingface.co/jaehyun-kim/bge-m3-onnx-quantized)
 
 [BAAI/bge-m3](https://huggingface.co/BAAI/bge-m3) INT8 동적 양자화 ONNX 모델.  
-불경(삼장) 시맨틱 검색을 위해 토크나이저를 프루닝한 경량 모델입니다.
+한글 -> 영어 시맨틱 검색을 위해 토크나이저를 프루닝한 경량 모델입니다.
 
 > INT8 dynamic quantized ONNX model with pruned tokenizer for Buddhist text (Tripitaka) semantic search.
 >
