@@ -1,7 +1,7 @@
 # BGE-M3 ONNX Quantized
 
 [BAAI/bge-m3](https://huggingface.co/BAAI/bge-m3) INT8 동적 양자화 ONNX 모델.  
-불경(삼장) 시맨틱 검색을 위해 토크나이저를 프루닝한 경량 모델입니다.
+한글 시맨틱 검색을 위해 토크나이저를 프루닝한 경량 모델입니다.
 
 > INT8 dynamic quantized ONNX model with pruned tokenizer for Buddhist text (Tripitaka) semantic search.
 
@@ -9,11 +9,11 @@
 
 ## Overview / 개요
 
-팔리어 삼장경(Tipitaka)을 한국어로 검색하기 위한 임베딩 모델입니다.  
+ 한국어로 검색하기 위한 임베딩 모델입니다.  
 [BAAI/bge-m3](https://huggingface.co/BAAI/bge-m3) 원본 모델을 ONNX로 변환하고 INT8 양자화하여 모바일(Flutter) 앱에서 온디바이스로 구동할 수 있도록 경량화했습니다.
 
 **주요 특징:**
-- 한국어 질문 -> 영문/팔리어 경전 크로스링구얼 검색
+- 한국어 질문 -> 크로스링구얼 검색
 - 1024차원 dense embedding
 - Flutter 앱 온디바이스 추론 가능 (onnxruntime)
 
@@ -32,14 +32,14 @@
 - FP32 대비 ~75% 크기 감소, 품질 손실 < 0.1%
 
 ### Tokenizer Pruning / 토크나이저 프루닝
-불경 검색에 불필요한 언어 토큰을 제거하여 토크나이저 크기를 축소했습니다.
+검색에 불필요한 언어 토큰을 제거하여 토크나이저 크기를 축소했습니다.
 
 **유지한 언어:**
 | 언어 | 범위 | 용도 |
 |---|---|---|
 | Latin + diacritics | U+0000-U+036F, U+1E00-U+1EFF | 영어, 팔리어 로마자 표기 |
 | 한글 | U+AC00-U+D7AF, U+3130-U+318F | 한국어 질문/검색 |
-| CJK | U+4E00-U+9FFF, U+3400-U+4DBF | 한문 불경 |
+| CJK | U+4E00-U+9FFF, U+3400-U+4DBF | 한문 |
 | Devanagari | U+0900-U+097F | 산스크리트/팔리어 원문 |
 
 **제거된 언어:** 아랍어, 태국어, 일본어(가나), 키릴 문자, 그루지아어 등 ~130,000 토큰
